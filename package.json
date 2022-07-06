@@ -1,0 +1,32 @@
+{
+  "name": "StreamOverlay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run chat\"",
+    "chat": "cd chat && npm run start",
+    "install": "cd chat && npm install",
+    "build": "cd chat && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "emoji-regex": "^8.0.0",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.2.10",
+    "tmi.js": "^1.8.5"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15"
+  }
+}

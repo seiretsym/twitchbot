@@ -1,0 +1,5 @@
+node_modules
+videos
+/For Streamers
+.env
+package-lock.json

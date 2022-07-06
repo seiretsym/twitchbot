@@ -1,0 +1,754 @@
+@font-face {
+  font-family: "Rubik Puddles";
+  src: url('fonts/RubikPuddles-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Rubik Microbe";
+  src: url('fonts/RubikMicrobe-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Rubik Moonrocks";
+  src: url('fonts/RubikMoonrocks-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Amatic Bold";
+  src: url('fonts/AmaticSC-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Amatic Regular";
+  src: url('fonts/AmaticSC-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Josefin Bold";
+  src: url('fonts/JosefinSans-Bold.ttf');
+}
+
+* {
+  text-shadow: 0px 0px 5px black;
+}
+
+p {
+  color: white;
+  font-family: "Amatic Bold";
+  font-size: 40px;
+  margin: 12px 0 0;
+  padding: 8px;
+  text-align: right;
+}
+
+.container {
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+.container .left-frame {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container .right-frame {
+  margin-left: 12px;
+  flex: 1 1;
+  position: relative;
+}
+
+#cam {
+  position: relative;
+  background: transparent;
+  width: 480px;
+  height: 277px;
+  margin-bottom: 10px;
+}
+
+.corners .topLeft .a {
+  position: absolute;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 480px 480px;
+  background-position: top left;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 4px;
+  animation: cornerWidth 5s ease infinite,
+    rainbowTL 5s ease infinite;
+}
+
+.corners .topLeft .b {
+  position: absolute;
+  background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 480px 480px;
+  background-position: top left;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 20px;
+  animation: cornerHeight 5s ease infinite,
+    rainbowTL 5s ease infinite;
+}
+
+.corners .topRight .a {
+  position: absolute;
+  background: linear-gradient(to top, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 480px 480px;
+  background-position: top right;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 20px;
+  animation: cornerHeight 5s ease infinite,
+    rainbowTR 5s ease infinite;
+}
+
+.corners .topRight .b {
+  position: absolute;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 480px 480px;
+  background-position: top right;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 4px;
+  animation: cornerWidth 5s ease infinite,
+    rainbowTR 5s ease infinite;
+}
+
+.corners .botLeft .a {
+  position: absolute;
+  background: linear-gradient(to left, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 480px 480px;
+  background-position: bottom left;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 4px;
+  animation: cornerWidth 5s ease infinite,
+    rainbowBL 5s ease infinite;
+}
+
+.corners .botLeft .b {
+  position: absolute;
+  background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 480px 480px;
+  background-position: bottom left;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  height: 20px;
+  animation: cornerHeight 5s ease infinite,
+    rainbowBL 5s ease infinite;
+}
+
+.corners .botRight .a {
+  position: absolute;
+  background: linear-gradient(to top, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 480px 480px;
+  background-position: bottom right;
+  bottom: 0;
+  right: 0;
+  width: 4px;
+  height: 20px;
+  animation: cornerHeight 5s ease infinite,
+    rainbowBR 5s ease infinite;
+}
+
+.corners .botRight .b {
+  position: absolute;
+  background: linear-gradient(to left, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 480px 480px;
+  background-position: top right;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 4px;
+  animation: cornerWidth 5s ease infinite,
+    rainbowBR 5s ease infinite;
+}
+
+@keyframes rainbowTL {
+  0% {
+    background-position: top left;
+  }
+
+  50% {
+    background-position: bottom right;
+  }
+}
+
+@keyframes rainbowTR {
+  0% {
+    background-position: top right;
+  }
+
+  50% {
+    background-position: bottom left;
+  }
+}
+
+@keyframes rainbowBL {
+  0% {
+    background-position: bottom left;
+  }
+
+  50% {
+    background-position: top right;
+  }
+}
+
+@keyframes rainbowBR {
+  0% {
+    background-position: bottom right;
+  }
+
+  50% {
+    background-position: top left;
+  }
+}
+
+@keyframes cornerWidth {
+  0% {
+    width: 20px;
+  }
+
+  20% {
+    width: 20px;
+  }
+
+  40% {
+    width: 40px;
+  }
+
+  60% {
+    width: 40px;
+  }
+
+  80% {
+    width: 40px;
+  }
+
+  100% {
+    width: 20px;
+  }
+}
+
+@keyframes cornerHeight {
+  0% {
+    height: 20px;
+  }
+
+  20% {
+    height: 20px;
+  }
+
+  40% {
+    height: 40px;
+  }
+
+  60% {
+    height: 40px;
+  }
+
+  80% {
+    height: 40px;
+  }
+
+  100% {
+    height: 20px;
+  }
+}
+
+#cam .outline {
+  position: absolute;
+  width: 464px;
+  height: 261px;
+  left: 8px;
+  top: 8px;
+  overflow: hidden;
+}
+
+.outline .bg {
+  position: relative;
+  width: 300%;
+  height: 300%;
+  left: -100%;
+  top: -100%;
+  background: conic-gradient(from 90deg,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red,
+      violet);
+  animation: rotate 5s ease infinite;
+}
+
+.outline .highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  left: -100%;
+  top: -100%;
+  z-index: 20;
+  background: conic-gradient(from 90deg,
+      white,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      white,
+      white,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      white,
+      white,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      white);
+  animation: rotate 3s ease infinite;
+  opacity: 0.5;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#chatbox {
+  position: relative;
+  width: 480px;
+  height: 671px;
+}
+
+#chatbox .outline {
+  position: absolute;
+  width: 464px;
+  height: 655px;
+  left: 8px;
+  top: 8px;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0, 0.50);
+}
+
+#chatbox .outline>div>div {
+  position: relative;
+  height: calc(662 * 2px);
+  width: calc(464 * 2px);
+  background-image: conic-gradient(from 90deg,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red,
+      violet);
+  background-position: center;
+  animation: rotate 5s ease infinite;
+}
+
+.outline>div {
+  overflow: hidden;
+}
+
+.outline .top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 4px;
+  width: 100%;
+}
+
+.outline .top>div {
+  left: -50%;
+  top: -331px;
+}
+
+.outline .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+.outline .bottom>div {
+  top: calc(331 * -3px);
+  left: -50%;
+}
+
+.outline .left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+}
+
+.outline .left>div {
+  top: -50%;
+  left: calc(464 * -0.5px);
+}
+
+.outline .right {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  height: 100%;
+  width: 4px;
+}
+
+.outline .right>div {
+  top: -50%;
+  left: calc(464 * -1.5px);
+}
+
+#main-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#game-title {
+  position: relative;
+  width: 1404px;
+  height: 150px;
+}
+
+#game-title .outline {
+  position: relative;
+  height: calc(100% - 16px);
+  width: calc(100% - 16px);
+  top: 8px;
+  left: 8px;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0, 0.50);
+}
+
+#game-title .outline h1 {
+  font-family: "Josefin Bold";
+  font-weight: normal;
+  font-size: 80px;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: calc(100% - 16px);
+}
+
+#game-title .outline .label {
+  position: absolute;
+  font-family: "Amatic Bold";
+  font-size: 36px;
+  top: 2%;
+  left: 1%;
+}
+
+#game-title .outline>div>div {
+  position: relative;
+  height: calc(15 * 134px);
+  width: calc(5 * 1388px);
+  background-image: conic-gradient(from 90deg,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red,
+      violet);
+  background-position: center;
+  animation: rotate 5s ease infinite;
+}
+
+#game-title .outline>div {
+  overflow: hidden;
+}
+
+#game-title .outline .top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 4px;
+  width: 100%;
+}
+
+#game-title .outline .top>div {
+  left: -200%;
+  top: calc(7 * -134px);
+}
+
+#game-title .outline .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+#game-title .outline .bottom>div {
+  top: calc(8 * -134px);
+  left: -200%;
+}
+
+#game-title .outline .left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+}
+
+#game-title .outline .left>div {
+  top: -700%;
+  left: calc(2 * -1388px);
+}
+
+#game-title .outline .right {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  height: 100%;
+  width: 4px;
+}
+
+#game-title .outline .right>div {
+  top: -700%;
+  left: calc(3 * -1388px);
+}
+
+#main-content {
+  position: relative;
+  width: 1404px;
+  height: 798px;
+  margin-top: 10px;
+}
+
+#main-content .outline {
+  position: relative;
+  height: calc(100% - 16px);
+  width: calc(100% - 16px);
+  top: 8px;
+  left: 8px;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0, 0.50);
+}
+
+#main-content .outline>div>div {
+  position: relative;
+  height: calc(15 * 798px);
+  width: calc(5 * 1404px);
+  background-image: conic-gradient(from 90deg,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red,
+      violet);
+  background-position: center;
+  animation: rotate 5s ease infinite;
+}
+
+#main-content .outline>div {
+  overflow: hidden;
+}
+
+#main-content .outline .top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 4px;
+  width: 100%;
+}
+
+#main-content .outline .top>div {
+  left: -200%;
+  top: calc(7 * -798px);
+}
+
+#main-content .outline .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+#main-content .outline .bottom>div {
+  top: calc(8 * -798px);
+  left: -200%;
+}
+
+#main-content .outline .left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+}
+
+#main-content .outline .left>div {
+  top: -700%;
+  left: calc(2 * -1404px);
+}
+
+#main-content .outline .right {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  height: 100%;
+  width: 4px;
+}
+
+#main-content .outline .right>div {
+  top: -700%;
+  left: calc(3 * -1404px);
+}
+
+#footer {
+  position: relative;
+  height: 90px;
+  width: 1896px;
+  margin-bottom: 15px;
+}
+
+#footer .wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+  padding: 8px;
+}
+
+#footer .subs {
+  position: relative;
+  width: calc(25% - 2px);
+  height: calc(100% - 16px);
+}
+
+#footer .outline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0, 0.50);
+}
+
+#footer .subs .outline>div>div {
+  position: relative;
+  height: calc(74 * 7px);
+  width: calc(474 * 2px);
+  background-image: conic-gradient(from 90deg,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red,
+      violet);
+  background-position: center;
+  animation: rotate 5s ease infinite;
+}
+
+#footer .outline .top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 4px;
+  width: 100%;
+}
+
+#footer .outline .top>div {
+  left: -50%;
+  top: calc(74 * -3px);
+}
+
+#footer .outline .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+#footer .outline .bottom>div {
+  top: calc(74 * -3.93px);
+  left: -50%;
+}
+
+#footer .outline .left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+}
+
+#footer .outline .left>div {
+  top: -300%;
+  left: calc(0.5 * -474px);
+}
+
+#footer .outline .right {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  height: 100%;
+  width: 4px;
+}
+
+#footer .outline .right>div {
+  top: -300%;
+  left: calc(1.5 * -474px);
+}
+
+#footer .subs {
+  margin: 0px 2px;
+}
+
+#footer .subs:first-child {
+  margin-left: 0px;
+}
+
+#footer .subs:last-child {
+  margin-right: 0px;
+}
+
+#footer .subs .label {
+  position: absolute;
+  top: -25px;
+  left: 40px;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+  font-family: "Amatic Bold";
+  font-size: 36px;
+  z-index: 1000;
+}
